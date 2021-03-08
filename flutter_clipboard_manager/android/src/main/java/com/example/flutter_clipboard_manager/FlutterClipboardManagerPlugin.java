@@ -40,18 +40,19 @@ public class FlutterClipboardManagerPlugin implements MethodCallHandler {
       clipboard.setPrimaryClip(clip);
       result.success(true);
     } else if (call.method.equals("copyFromClipBoard")) {
-      android.content.ClipData clipData = clipboard.getPrimaryClip();
-
-      if (clipData == null) {
+      if (clipboard == null || !clipboard.hasPrimaryClip()) {
         result.success("");
-      }
-
-      if (clipData.getItemCount() >= 1) {
-        ClipData.Item clipDataItem = clipboard.getPrimaryClip().getItemAt(0);
-        String data = "" + clipDataItem.getText();
-        result.success(data);
       } else {
-        result.success("");
+        android.content.ClipData clipData = clipboard.getPrimaryClip();
+        if (clipData == null) {
+          result.success("");
+        } else if (clipData.getItemCount() >= 1) {
+          ClipData.Item clipDataItem = clipboard.getPrimaryClip().getItemAt(0);
+          String data = "" + clipDataItem.getText();
+          result.success(data);
+        } else {
+          result.success("");
+        }
       }
     } else {
       result.notImplemented();
