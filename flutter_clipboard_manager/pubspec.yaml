@@ -10,7 +10,7 @@ flutter:
         package: com.example.flutter_clipboard_manager
         pluginClass: FlutterClipboardManagerPlugin
       ios:
-        pluginClass: FLTURLLauncherPlugin
+        pluginClass: FlutterClipboardManagerPlugin
       web:
         default_package: flutter_clipboard_manager_web
 
