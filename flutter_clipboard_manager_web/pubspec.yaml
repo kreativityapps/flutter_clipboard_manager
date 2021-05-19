@@ -23,12 +23,14 @@ dependencies:
 
   # todo: use Pub dependency once the platform interface has been published to Pub.
   flutter_clipboard_manager_platform_interface:
-    git:
-      url: https://github.com/simpleclub/flutter_clipboard_manager
-      path: flutter_clipboard_manager_platform_interface
+    path: ../flutter_clipboard_manager_platform_interface
+#  flutter_clipboard_manager_platform_interface:
+#    git:
+#      url: https://github.com/simpleclub/flutter_clipboard_manager
+#      path: flutter_clipboard_manager_platform_interface
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
-  pedantic: ^1.8.0
+  pedantic: ^1.11.0
