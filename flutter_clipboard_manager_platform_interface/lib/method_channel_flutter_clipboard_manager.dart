@@ -7,12 +7,12 @@ const MethodChannel _channel = MethodChannel('flutter_clipboard_manager');
 
 /// An implementation of [UrlLauncherPlatform] that uses method channels.
 class MethodChannelFlutterClipboardManager extends FlutterClipboardManagerPlatform {
-  Future<bool> copyToClipBoard(String text) async {
+  Future<bool?> copyToClipBoard(String text) async {
     return await _channel.invokeMethod(
       'copyToClipBoard',
       <String, String>{'text': text},
     );
   }
 
-  Future<String> copyFromClipBoard() => _channel.invokeMethod('copyFromClipBoard');
+  Future<String?> copyFromClipBoard() => _channel.invokeMethod('copyFromClipBoard');
 }

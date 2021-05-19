@@ -23,11 +23,11 @@ abstract class FlutterClipboardManagerPlatform extends PlatformInterface {
     _instance = instance;
   }
 
-  Future<bool> copyToClipBoard(String text) async {
+  Future<bool?> copyToClipBoard(String text) async {
     throw UnimplementedError();
   }
 
-  Future<String> copyFromClipBoard() async {
+  Future<String?> copyFromClipBoard() async {
     throw UnimplementedError();
   }
 }
