@@ -15,7 +15,7 @@ flutter:
         default_package: flutter_clipboard_manager_web
 
 environment:
-  sdk: ">=2.7.0 <3.0.0"
+  sdk: '>=2.12.0 <3.0.0'
   flutter: ">=1.12.13 <2.0.0"
 
 dependencies:
@@ -24,15 +24,10 @@ dependencies:
 
   # todo: use Pub dependency once the platform interface has been published to Pub.
   flutter_clipboard_manager_platform_interface:
-    git:
-      url: https://github.com/simpleclub/flutter_clipboard_manager
-      path: flutter_clipboard_manager_platform_interface
-
-  # todo: remove this once the web plugin has been published to Pub.
-  flutter_clipboard_manager_web:
-    git:
-      url: https://github.com/simpleclub/flutter_clipboard_manager
-      path: flutter_clipboard_manager_web
+    path: ../flutter_clipboard_manager_platform_interface
+  #    git:
+#      url: https://github.com/simpleclub/flutter_clipboard_manager
+#      path: flutter_clipboard_manager_platform_interface
 
 dev_dependencies:
   flutter_test:
